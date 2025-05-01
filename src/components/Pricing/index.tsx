@@ -1,12 +1,8 @@
 "use client";
 import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
-import OfferList from "./OfferList";
-import PricingBox from "./PricingBox";
 
 const Pricing = () => {
-  const [isMonthly, setIsMonthly] = useState(true);
-
   return (
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -17,86 +13,32 @@ const Pricing = () => {
           width="665px"
         />
 
-        {/* <div className="w-full">
-          <div className="mb-8 flex justify-center md:mb-12 lg:mb-16">
-            <span
-              onClick={() => setIsMonthly(true)}
-              className={`${
-                isMonthly
-                  ? "pointer-events-none text-primary"
-                  : "text-dark dark:text-white"
-              } mr-4 cursor-pointer text-base font-semibold`}
-            >
-              Monthly
-            </span>
-            <div
-              onClick={() => setIsMonthly(!isMonthly)}
-              className="flex cursor-pointer items-center"
-            >
-              <div className="relative">
-                <div className="h-5 w-14 rounded-full bg-[#1D2144] shadow-inner"></div>
-                <div
-                  className={`${
-                    isMonthly ? "" : "translate-x-full"
-                  } shadow-switch-1 absolute left-0 top-[-4px] flex h-7 w-7 items-center justify-center rounded-full bg-primary transition`}
-                >
-                  <span className="active h-4 w-4 rounded-full bg-white"></span>
-                </div>
-              </div>
-            </div>
-            <span
-              onClick={() => setIsMonthly(false)}
-              className={`${
-                isMonthly
-                  ? "text-dark dark:text-white"
-                  : "pointer-events-none text-primary"
-              } ml-4 cursor-pointer text-base font-semibold`}
-            >
-              Yearly
-            </span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <div className="p-6 border rounded-lg shadow-sm">
+            <h3 className="text-xl font-semibold mb-4">Segmentation</h3>
+            <ul className="list-disc list-inside space-y-2">
+              <li>Primary: individuals with low vision</li>
+              <li>Secondary: eye‑care providers, rehab centers</li>
+              <li>Tertiary: AI/tech integrators</li>
+            </ul>
           </div>
-        </div> */}
-
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <PricingBox
-            packageName="Lite"
-            price={isMonthly ? "40" : "120"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
-          >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="inactive" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
-          </PricingBox>
-          <PricingBox
-            packageName="Basic"
-            price={isMonthly ? "399" : "789"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
-          >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
-          </PricingBox>
-          <PricingBox
-            packageName="Plus"
-            price={isMonthly ? "589" : "999"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
-          >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="active" />
-          </PricingBox>
+          <div className="p-6 border rounded-lg shadow-sm">
+            <h3 className="text-xl font-semibold mb-4">TAM/SAM/SOM</h3>
+            <ul className="list-disc list-inside space-y-2">
+              <li>TAM: 2 M RP patients ⇒ $1 B</li>
+              <li>SAM: 1.2 M early/mid-stage ⇒ $600 M</li>
+              <li>SOM: 240 K middle‑income ⇒ $120 M</li>
+            </ul>
+          </div>
+          <div className="p-6 border rounded-lg shadow-sm">
+            <h3 className="text-xl font-semibold mb-4">Go-to-Market Roadmap</h3>
+            <ul className="list-disc list-inside space-y-2">
+              <li>Phase 1 (0–6 mo): Build MVP, collect feedback, secure early champions — Business Poster</li>
+              <li>Phase 2 (6–12 mo): Launch pre‑orders, showcase patient testimonials, soft D2C via website — Business Poster</li>
+              <li>Phase 3 (12–18 mo): Scale up, targeted outreach, broaden clinic partnerships — Business Poster</li>
+              <li>Long‑Term: AI smart‑lens R&D, IP licensing, military/medical & global expansion</li>
+            </ul>
+          </div>
         </div>
       </div>
 
